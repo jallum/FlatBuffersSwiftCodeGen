@@ -53,7 +53,9 @@ extension Table {
                     }
                 }
             }
-            public var hashValue: Int { return Int(_myOffset) }
+            public func hash(into hasher: inout Hasher) {
+                hasher.combine(_myOffset)
+            }
             public static func ==<T>(t1 : \(name.value).Direct<T>, t2 : \(name.value).Direct<T>) -> Bool {
                 return t1._reader.isEqual(other: t2._reader) && t1._myOffset == t2._myOffset
             }
