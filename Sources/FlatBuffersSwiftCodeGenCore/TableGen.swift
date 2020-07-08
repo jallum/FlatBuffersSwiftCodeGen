@@ -566,7 +566,7 @@ extension Table {
                         switch scalar {
                         case .bool:
                             statements.append("""
-                                    let \(f.fieldName) = object["\(f.fieldName)"] as? Bool
+                                    let \(f.fieldName) = object["\(f.fieldName)"] as? Bool ?? false
                             """)
                         case .f32:
                             statements.append("""
